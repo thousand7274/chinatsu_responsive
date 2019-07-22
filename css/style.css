@@ -1,0 +1,782 @@
+@charset "utf8";
+body{
+  color:rgb(212, 212, 212);
+  background-color: rgb(8, 8, 8);
+  font-size: 16px;
+  background-image: url(../img/background.JPG);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-weight: bold;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* ヘッダー */
+#fixed {
+  position: fixed;
+  width: 100%;
+  min-width: 320px;
+}
+header{
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  z-index:30;
+}
+#header-left{
+  margin-top:15px;
+  font-size: 36px;
+}
+.twitter,
+.instagram,
+.facebook{
+  color: rgb(122, 153, 255)
+}
+.twitter:hover,
+.instagram:hover,
+.facebook:hover{
+  color: rgb(255, 244, 90);
+}
+
+#navigation{
+  padding-right: 10px;
+}
+header li{
+  margin-top:20px;
+  display:inline-block;
+  padding-right: 30px;
+}
+.link1, .link2,
+.link3, .link4{
+  color:rgb(210, 215, 219);
+  text-decoration: none;
+}
+.link1:hover,.link2:hover,
+.link3:hover,.link4:hover{
+  color:rgb(255, 244, 90);
+  text-decoration: none;
+}
+
+
+
+/* </ヘッダー> */
+
+/* <welcome> */
+
+.greet{
+  opacity: .8;
+  color: rgb(210, 215, 219);
+  padding: 200px 0 0 0;
+  background: transparent;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  font-size: 15vw;
+  text-align: right;
+  justify-content: center;
+  text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+              -1px 1px 0 #000, 1px -1px 0 #000,
+              0px 1px 0 #000,  0-1px 0 #000,
+              -1px 0 0 #000, 1px 0 0 #000;
+}
+
+/* </welcome> */
+
+/* <プロフィール> */
+
+h1{
+  font-size: 36px;
+  margin-left: 50px;
+}
+.plofile{
+  width: 100%;
+  min-width: 320px;
+  background:rgba(0,0,0,.5);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:110px;
+  padding-bottom: 30px;
+  margin-top:-60px;
+}
+.plofile li{
+  margin: 10px;
+  font-size: 22px;
+  font-weight: initial;
+}
+aside{
+  display: block;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 18px;
+  font-weight: initial;
+  text-align: center;
+  line-height: 1.8;
+}
+aside .plofile-text{
+  text-align: left;
+  display: inline-block;
+  word-break: normal;
+  padding: 10px;
+}
+
+/* </プロフィール> */
+
+/* 写真 */
+
+.photo{
+  margin-top: 50px;
+  width: 100%;
+  min-width: 320px;
+  background:rgba(0,0,0,.6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.photo-img{
+  text-align: center;
+  padding: 10px 0;
+}
+.picture{
+  max-width: 100%;
+  height: auto;
+  padding: 10px;
+}
+/* ポップアップウインドウの設定 */
+.popup-window {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 0;
+  min-width: 735px;
+  }
+  .popup-window:target {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+  }
+  .popup-window .popup-inner {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -320px;
+  width: 800px;
+  padding:20px;
+  overflow-x: hidden;
+  text-align:center;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0c, 0.6);
+  }
+  .popup-window .popup-inner p {
+  padding: 0 20px;
+  }
+  .popup-window .popup-close {
+  display: block;
+  text-indent: -100px;
+  overflow: hidden;
+  }
+  .popup-window .popup-close:before {
+  content: '';
+  position: absolute;
+  color: rgb(255, 244, 83);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+  .popup-window .popup-close:after {
+  content: '\00d7';
+  position: absolute;
+  color:rgb(255, 244, 83);
+  top: 70px;
+  left: 50%;
+  z-index: 20;
+  margin-left: 260px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 2px;
+  padding: 2px 15px;
+  font-size: 18px;
+  text-decoration: none;
+  text-indent: 0;
+  }
+  .popup-window {
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  }
+
+
+
+/* /写真 */
+
+
+/* <好きな食べ物> */
+h2{
+  margin-top: 300px;
+  background: rgba(0, 0, 0, .5);
+  font-size: 40px;
+  text-align: center;
+  padding-top:100px;
+  width: 100%;
+}
+.food-logo{
+  margin-top: 200px;
+  background:rgba(0,0,0,.6);
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.favorite-food{
+  display: flex;
+  width: 100%;
+  background:rgba(0,0,0,.6);
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.food-img{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  min-width: 320px;
+  justify-content: space-evenly;
+}
+
+.food-img img{
+  padding: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* /好きな食べ物 */
+/* 好きな音楽 */
+.music-logo{
+  margin-top: 200px;
+  padding: 10px;
+  background:rgba(0,0,0,.6);
+  text-align: center;
+  font-size: 36px;
+}
+.favorite-music{
+  width: 100%;
+  min-width: 320px;
+  padding-top: 30px;
+  background:rgba(0,0,0,.6);
+}
+.music{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+iframe{
+  padding: 20px;
+  max-width: 100%;
+  height: 315px;
+}
+/* /好きな音楽 */
+
+
+/* お問い合わせ */
+.contact-form{
+  margin-top: 50px;
+  width: 100%;
+  min-width: 320px;
+  background:rgba(0,0,0,.6);
+  /* display: block; */
+  text-align: center;
+  /* flex-direction: column; */
+}
+
+.form{
+  margin: 0 auto;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+}
+
+.form .name,
+.form .email,
+.form .tel {
+  margin: 30px 10px;
+  height: 30px;
+  width: 300px;
+  font: 16px sans-serif;
+	box-sizing: border-box;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: rgb(212, 212, 212);
+	border: none;
+	border-bottom: 2px solid rgb(122, 122, 122);
+	background: transparent;
+}
+.form .name:focus,
+.form .email:focus,
+.form .tel:focus {
+  border-bottom: 2px solid  rgb(255, 244, 90);
+	outline: none;
+}
+.form .inquiry {
+  display: block;
+  margin: 10px auto;
+  height: 120px;
+  width: 50%;
+  font: 16px sans-serif;
+	box-sizing: border-box;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: rgb(212, 212, 212);
+	border: 2px solid rgb(122, 122, 122);
+	background: transparent;
+}
+.form .inquiry:focus {
+  border: 2px solid rgb(255, 244, 90);
+	outline: none;
+}
+
+.submit{
+  margin: 30px;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color:transparent;
+  color:#acacac;
+  border-radius: 5px;
+  border: 2px solid rgb(180, 175, 182)
+}
+  .submit:active{
+  border: 2px solid rgb(255, 244, 90);
+  color:rgb(255, 244, 90);
+}
+  .submit:visited{
+    border: 2px solid rgb(255, 244, 90);
+    color:rgb(255, 244, 90);
+}
+/* /お問い合わせ */
+
+/* フッター */
+footer{
+  width: 100%;
+  min-width: 320px;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: rgb(255, 244, 90);
+  margin-top: 200px;
+
+}
+/* /フッター */
+
+/* ------------------------------------
+  タブレット対応
+------------------------------------ */
+/* MediaQuery */
+@media only screen and (max-width: 768px) {
+  header{
+    font-size: 24px;
+  }
+  #header-left{
+    font-size: 40px;
+  }
+  .picture{
+    pointer-events:none;
+  }
+  .contact-form{
+    margin-top: 50px;
+    width: 100%;
+    min-width: 320px;
+    background:rgba(0,0,0,.6);
+    text-align: center;
+  }
+
+  .form{
+    margin: 0 auto;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  .form .name,
+  .form .email,
+  .form .tel {
+    margin: 30px 10px;
+    height: 30px;
+    width: 300px;
+    font: 20px sans-serif;
+    box-sizing: border-box;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: rgb(212, 212, 212);
+    border: none;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    background: transparent;
+  }
+  .form .name:focus,
+  .form .email:focus,
+  .form .tel:focus {
+    border-bottom: 2px solid  rgb(255, 244, 90);
+    outline: none;
+  }
+  .form .inquiry {
+    display: block;
+    margin: 10px auto;
+    height: 120px;
+    width: 50%;
+    font: 20px sans-serif;
+    box-sizing: border-box;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: rgb(212, 212, 212);
+    border: 2px solid rgb(122, 122, 122);
+    background: transparent;
+  }
+  .form .inquiry:focus {
+    border: 2px solid rgb(255, 244, 90);
+    outline: none;
+  }
+  
+  .submit{
+    margin: 30px;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 10px 20px;
+    color: #000000;
+    background-color:transparent;
+    color:#acacac;
+    border-radius: 5px;
+    border: 2px solid rgb(180, 175, 182)
+  }
+    .submit:active{
+    border: 2px solid rgb(255, 244, 90);
+    color:rgb(255, 244, 90);
+  }
+  .submit:visited{
+    border: 2px solid rgb(255, 244, 90);
+    color:rgb(255, 244, 90);
+}
+}
+/* MediaQuery end */
+/* ------------------------------------
+  スマホ対応
+------------------------------------ */
+/* MediaQuery */
+@media only screen and (max-width: 678px) {
+  body{
+    color:rgb(212, 212, 212);
+    background-color: rgb(77, 77, 77);
+    background-image:none;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    min-width: 320px;
+  }
+  header{
+    box-sizing: border-box;
+    background-color: rgba(77, 77, 77, 0.5);
+
+  }
+  #header-left{
+    margin:0;
+  }
+  #fixed{
+    position: static;
+    background-color: transparent;
+  }
+  #navigation{
+    display: none;
+  }
+
+  /* <welcome> */
+  .greet{
+    color: rgb(210, 215, 219);
+    /* padding: 200px 0 0 0; */
+    height: 80vh;
+    background-image:url(../img/background.JPG);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    min-width: 320px;
+    font-size: 15vw;
+    text-align: right;
+    justify-content: center;
+    text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+                -1px 1px 0 #000, 1px -1px 0 #000,
+                0px 1px 0 #000,  0-1px 0 #000,
+                -1px 0 0 #000, 1px 0 0 #000,
+  }
+
+/* </welcome> */
+  /* <プロフィール> */
+
+  h1{
+    font-size: 30px;
+    /* margin-left: 50px; */
+  }
+  .plofile{
+    width: 100%;
+    min-width: 320px;
+    background:rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    padding:0;
+    padding-bottom: 30px;
+    margin-top:60px;
+  }
+  .plofile ul{
+    width: 100%;
+  }
+  .plofile li{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: initial;
+    text-align: left;
+  }
+  aside{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: initial;
+    text-align: left;
+    line-height: 1.8;
+  }
+  aside .plofile-text{
+    text-align: left;
+    display: inline-block;
+    word-break: normal;
+    padding: 10px;
+  }
+  /* </プロフィール> */
+  /* 写真 */
+  #p3{
+    margin: 0;
+  }
+  .photo{
+    margin-top:0;
+    width: 100%;
+    min-width: 320px;
+    background:rgba(0,0,0,.5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .photo-img{
+    text-align: center;
+    padding: 10px 0;
+  }
+  .picture{
+    width: 100vh;
+    height: 50vh;
+    padding: 10px 0;
+    pointer-events:none
+
+  }
+  /* /写真 */
+  #f2{
+    margin-top: 30px;
+    /* margin-top: 100px; */
+    background: rgba(0, 0, 0, .5);
+    font-size: 36px;
+    text-align: center;
+    /* padding-top:100px; */
+    width: 100%;
+  }
+  /* <好きな食べ物> */
+  .food-logo{
+    margin-top: 100px;
+    background:rgba(0,0,0,.6);
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .favorite-food{
+    display: flex;
+    width: 100%;
+    background:rgba(0,0,0,.6);
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .food-img{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    justify-content: space-evenly;
+  }
+
+  .food-img img{
+    padding: 20px 0;
+    width: 100vh;
+    height: auto;
+  }
+
+
+  /* /好きな食べ物 */
+  /* 好きな音楽 */
+  .music-logo{
+    margin-top: 200px;
+    padding: 10px;
+    background:rgba(0,0,0,.6);
+    text-align: center;
+    font-size: 36px;
+  }
+  .favorite-music{
+    width: 100%;
+    min-width: 320px;
+    padding-top: 30px;
+    background:rgba(0,0,0,.6);
+  }
+  .music{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  iframe{
+    padding: 20px;
+    max-width: 100%;
+    height: 315px;
+  }
+  /* /好きな音楽 */
+
+  
+
+  /* お問い合わせ */
+  .contact{
+    padding-bottom:20px;
+  }
+  .contact-form{
+    margin:0;
+    width: 100%;
+    min-width: 320px;
+    background:rgba(0,0,0,.5);
+    /* display: block; */
+    text-align: center;
+    /* flex-direction: column; */
+  }
+
+  .form{
+    margin: 0 auto;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .form .name,
+  .form .email,
+  .form .tel {
+    margin: 30px 10px;
+    height: 30px;
+    width: 300px;
+    font: 16px sans-serif;
+    box-sizing: border-box;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: rgb(212, 212, 212);
+    border: none;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    background: transparent;
+  }
+  .form .name:focus,
+  .form .email:focus,
+  .form .tel:focus {
+    border-bottom: 2px solid  rgb(255, 244, 90);
+    outline: none;
+  }
+  .form .inquiry {
+    display: block;
+    margin: 10px auto;
+    height: 120px;
+    width: 80%;
+    font: 16px sans-serif;
+    box-sizing: border-box;
+    padding: 0.3em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color: rgb(212, 212, 212);
+    border: 2px solid rgb(122, 122, 122);
+    background: transparent;
+  }
+  .form .inquiry:focus {
+    border: 2px solid rgb(255, 244, 90);
+    outline: none;
+  }
+
+  .submit{
+    margin: 30px;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    background-color:rgba(228, 228, 228, 0.5);
+    border-radius: 5px;
+    background-color:transparent;
+    color:#acacac;
+    border-radius: 5px;
+    border: 2px solid rgb(180, 175, 182)
+  }
+    .submit:active{
+    border: 2px solid rgb(255, 244, 90);
+    color:rgb(255, 244, 90)
+  }
+  .submit:visited{
+    border: 2px solid rgb(255, 244, 90);
+    color:rgb(255, 244, 90);
+}
+  /* .submit:active */
+
+
+
+  /* /お問い合わせ */
+
+  /* フッター */
+  footer{
+    width: 100%;
+    min-width: 320px;
+    background-color: rgba(77, 77, 77, 0.5);
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: rgb(255, 244, 90);
+    margin-top: 200px;
+
+  }
+  /* /フッター */
+}
+/* MediaQuery end */
